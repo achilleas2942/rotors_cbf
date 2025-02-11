@@ -15,7 +15,7 @@
   git clone https://github.com/achilleas2942/rotors_cbf.git
   ```
 
-### 3. Run the simulator
+### 3. Run the pelicans cbfs
 #### Option 1 - Build docker image locally and run docker container using the create and run bash script files
   - Go to the docker directory
     ```
