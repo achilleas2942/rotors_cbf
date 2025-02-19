@@ -31,12 +31,13 @@ fi
 
 # Loop to create the specified number of Docker containers
 for ((i=1; i<=NUM_ROBOTS; i++)); do
-    echo "Starting container for turtlebot=$i"
+    echo "Starting container for rotor=$i"
     docker run --privileged -d \
         --net=host \
         --env="DISPLAY" \
         --env="QT_X11_NO_MITSHM=1" \
         --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+        --name="rotor_cbf$i" \
         ghcr.io/achilleas2942/rotors-cbf \
         "$i" "$ROS_MASTER_IP" "$ROS_IP" &
     sleep 1
