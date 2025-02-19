@@ -32,7 +32,9 @@ fi
 # Loop to create the specified number of Docker containers
 for ((i=1; i<=NUM_ROBOTS; i++)); do
     echo "Starting container for rotor=$i"
-    docker run --privileged -d \
+    docker run --rm --privileged -d \
+        --memory="1g" \
+        --cpus="4.0" \
         --net=host \
         --env="DISPLAY" \
         --env="QT_X11_NO_MITSHM=1" \
